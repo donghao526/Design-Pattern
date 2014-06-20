@@ -73,7 +73,8 @@ class Whip(CondimentDecorator):
         return self.beverage.getDescription() + ", Whip"
     def cost(self):
         return self.beverage.cost() + 0.9
-    
+
+# Test code    
 if __name__=="__main__":
     beverage1 = Espresso()
     print beverage1.getDescription() + " : $" + str(beverage1.cost())
