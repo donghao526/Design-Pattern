@@ -13,7 +13,7 @@ Head First中，鸭子的fly和quack随着具体的鸭子实例发生变化，�
 观察者中有一个主题对象Subject和若干具体的观察者对象Observer，Subject提供接口供注册和删除观察者，Observer提供update接口当主题状态改变时被调用。 Subject是有状态的，Observer使用这些状态，状态虽不属于Observer，但是这些Observer必须依赖Subject告诉它们状态何时改变。 当然在notify这些Observer时，可以选择使用Subject去push数据，也可以在Observer中pull过来。
 
 Head First中的Weather Data就是主题，当期发现气象数据发生了变化后，便notify各广告版实现，数据的更新。 
-![Observer-Pattern](./images/observer.png)
+![Observer-Pattern](./images/Observer.png)
 此外Java的Swing中也用到了大量的观察者模式，当我们给JButton或者JPanel等注册ActionListener时，其实就是注册了Observer，当UI事件发生时，这些Observer便被notify了。
 3 装饰者模式
 ---------
