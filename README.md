@@ -21,3 +21,11 @@ Head First中的Weather Data就是主题，当期发现气象数据发生了变�
 被装饰者总是被装饰着包装起来，因为装饰者必须能取代被装饰者，因此它们具有相同的类型。装饰者虽有着共同的类型，但并不继承被装饰者的行为，行为总是来自装饰者和基础组件，或与其它装饰者之间的组合关系。
 ![Decorator-Pattern](./images/decorator.png)
 Head First中，Beverage饮料类是一个基础类，在此基础上扩展了HouseBlend、DarkRoast、Espresso以及Decaf四种饮料，同时我们将调料类CondimentDecorator作为装饰者，装饰各种饮料，作为装饰者要具有相同的类型，因此CondimentDecorator也扩展自Beverage，同时增加了一个指向Beverage对象的引用。此时在CondimentDecorator基础上扩展了四种具体调料类来包装这些饮料，达到装饰目的。
+4 工厂模式
+---------
+    工厂方法模式定义了一个创建对象的接口，但由于子类要决定实例化的类是哪一个。工厂方法让类把实例化推迟到了子类。
+![Decorator-Pattern](./images/Factory.jpg)
+
+Head First中，Pizza是一个产品类，PizzaStore是一个创建者的抽象类，NYPizzaStore和ChicagoPizzaStore两个子类继承了PizzaStore，在PizzaStore类中，用户只需要调用createPizza即可创建一个pizza，但具体pizza产品是如何创建的是封装在子类中，因此工厂模式让子类决定要实例化的类是哪个。
+
+所谓决定，并不是指模式允许子类本身在运行时做决定，而是指在编写创建者类时，不需要知道实际创建的产品是哪一个。选择了使用哪个子类，自然就决定了实际创建的产品是什么。
